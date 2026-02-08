@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Страна Город
 
-## Getting Started
+Веб-приложение для просмотра информации о странах и городах, построенное на Next.js.
 
-First, run the development server:
+## Описание проекта
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Проект представляет собой интерактивную карту стран и городов с возможностью навигации по странам и их городам. Приложение демонстрирует использование динамической маршрутизации в Next.js App Router.
+
+## Функционал
+
+- 📄 Просмотр списка всех стран
+- 🏙️ Просмотр информации о конкретной стране
+- 🌃 Просмотр списка городов выбранной страны
+- 📍 Детальная информация о каждом городе
+- 🔄 Динамическая навигация между страницами
+
+## Технологии
+
+- **Next.js 14** - React фреймворк с App Router
+- **TypeScript** - Типизация JavaScript
+- **Tailwind CSS** - Утилитарный CSS фреймворк
+- **React** - Библиотека для создания пользовательских интерфейсов
+
+## Структура проекта
+
+```
+src/
+├── app/
+│   ├── page.tsx                    # Главная страница
+│   ├── countries/
+│   │   ├── [countryId]/
+│   │   │   ├── page.tsx            # Страница страны
+│   │   │   └── cities/
+│   │   │       └── [cityId]/
+│   │   │           └── page.tsx    # Страница города
+│   │   └── layout.tsx              # Layout для страниц стран
+│   └── layout.tsx                  # Главный layout
+├── data/
+│   └── countries.ts                # Данные о странах и городах
+└── components/
+    └── ...                         # Переиспользуемые компоненты
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Установка и запуск
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Клонируйте репозиторий:
+```bash
+git clone https://github.com/MiraQQQez/NextJS-Strana-Gorod.git
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Перейдите в директорию проекта:
+```bash
+cd NextJS-Strana-Gorod
+```
 
-## Learn More
+3. Установите зависимости:
+```bash
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Запустите сервер разработки:
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Откройте [http://localhost:3000](http://localhost:3000) в браузере
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Данные
 
-## Deploy on Vercel
+Проект использует тестовые данные о странах и городах, которые находятся в файле `src/data/countries.ts`. Каждая страна содержит:
+- Название на русском и английском
+- Столицу
+- Население
+- Площадь
+- Список городов с их характеристиками
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Маршрутизация
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `/` - Главная страница со списком стран
+- `/countries/[countryId]` - Страница конкретной страны
+- `/countries/[countryId]/cities/[cityId]` - Страница города
+
+## Дальнейшее развитие
+
+- [ ] Добавить интерактивную карту
+- [ ] Интеграция с API для получения актуальных данных
+- [ ] Поиск по странам и городам
+- [ ] Фильтрация по континентам
+- [ ] Добавление информации о погоде
+- [ ] Мультиязычность
+
+## Лицензия
+
+MIT License
+
+## Автор
+
+[MiraQQQez](https://github.com/MiraQQQez)
